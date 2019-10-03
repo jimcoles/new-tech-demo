@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-resource.js"></script>
+    <script language="javascript">
+ 
+    angular.module('myApp',['ngResource']);
+
+    function Ctrl($scope,$resource) {
+        var restservice = $resource(
+            'http://localhost:8080/rest-angular/rest/simple/json',
+            { },
+            {
+                query: { method: 'GET', isArray: true },
+                create: { method: 'POST', isArray: true },
+            }
+        );
+        $scope.objs = restservice.query();
+    };
+          
+    $scope.search = function() {
+        $scope.objs = restservice.query({ id: $scope.name });
+    };
+
+    $scope.save = function() {
+        $scope.objs = restservice.create({ name: $scope.name, surname: $scope.surname });
+    }
+
+    </script>
+</head>
+ 
+<body>
+    
+<div ng-app="myApp">
+            
+    <div ng-controller="Ctrl">            
+        <ul>               
+            <li ng-repeat="obj in objs">{{obj.name}} - {{obj.surname}}</li>
+        </ul>
+    </div>
+        
+</div>
+</body>
+</html>

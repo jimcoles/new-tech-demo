@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="test-harness" />
+        <module name="userdb-service-resteasy-mongo" />
+        <module name="user-service-resteasy" />
+        <module name="jasmin-shared-api" />
+        <module name="user-ui-react" />
+        <module name="user-service-javax" />
+        <module name="resteasy-sample-ws" />
+        <module name="user-service-raw" />
+        <module name="user-ui-react-simple" />
+        <module name="user-ui-angular" />
+        <module name="jasmin-services-war-tomcat" />
+        <module name="user-webapp" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="user-ms-docker" target="1.8" />
+      <module name="user-react-gulp-js" target="12" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="services-core-resteasy" options="-proc:none" />
+    </option>
+  </component>
+</project>

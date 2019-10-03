@@ -1,0 +1,92 @@
+@startuml
+hide footbox
+skinparam EntityJustify Center
+
+participant Browser
+participant JBoss #lightblue
+participant "Public WS\nDispatch" as pubDispatch
+box "HTML Filters"
+    participant "Page\nHandler\n'/ui/pg1'" as htmlHandler
+    participant "JSP \n Template" as jspTemplate
+end box
+
+participant "EAI\nPub Sub" as eaiPubSub #lightblue
+participant "Svc1\nHandler\n'/ws/svc1'" as wsHandler
+participant "DbSvc2\nHandler\n'/ws/db/svc2'" as dbHandler
+
+database "DB"
+
+' -----
+
+== Init Pub/Sub ==
+
+note right eaiPubSub
+  All services initialize by
+  registering their unique URL path
+  and subscribing to messages
+  addressed to themselves
+end note
+htmlHandler --> eaiPubSub: reg/subscribe
+wsHandler --> eaiPubSub: reg/subscribe
+dbHandler --> eaiPubSub: reg/subscribe
+
+
+== Initialize Page ==
+
+note right Browser
+  New Page Request from the
+  Browser. Triggered by User
+  hyperlink navigation.
+end note
+Browser -> JBoss: [JSON]/Http
+
+activate JBoss
+
+JBoss -> pubDispatch:
+pubDispatch -> htmlHandler: filter[1]
+htmlHandler -\ eaiPubSub: EAI/JSON/Http to="/ws/svc1"
+eaiPubSub -\ wsHandler: publish
+wsHandler -\ eaiPubSub: EAI to="/ws/db/svc2"
+eaiPubSub -\ dbHandler: publish
+dbHandler -> DB: access DB
+DB --> dbHandler
+dbHandler --\ eaiPubSub: DB data to="/ws/svc1"
+eaiPubSub --\ wsHandler: publish
+wsHandler --\ eaiPubSub: to="/ui/pg1"
+eaiPubSub --\ htmlHandler: publish
+note over htmlHandler
+ The request handler adds required JSON
+ as needed by the JSP template prior to
+ returning control to the filter handler
+end note
+htmlHandler --> pubDispatch:
+pubDispatch -> jspTemplate: filter[2]
+note over jspTemplate
+ JSP template uses Http request attrs
+ set by the HTML request handler to
+ load response HTML with Javascript
+end note
+jspTemplate --> Browser: HTML+JSON/Http
+
+deactivate JBoss
+
+== Javascript Http Event Polling from Page ==
+
+note right Browser
+  Request from JS layer triggered
+  by JS event such as timed polling
+  or User textbox entry. Not A
+  "New Page".
+end note
+Browser -> JBoss: JSON/Http
+JBoss -> wsDispatch
+wsDispatch -> wsHandler
+wsHandler -> DB
+DB --> wsHandler
+wsHandler --> wsDispatch
+wsDispatch --> Browser: JSON/Http
+note right Browser
+ Page re-renders with
+ new JSON data
+end note
+@enduml

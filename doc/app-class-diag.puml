@@ -1,0 +1,304 @@
+@startuml
+
+package Core {
+
+    class Identity #lightgreen {
+        UUID : uuid
+        URN : commonFQName
+        (opt) AuthenticationCertificate : cert
+    }
+
+    Identity --> AuthenticationCertificate
+
+    note top
+        Identity Management for
+        all kinds of things including
+        People, Businesses, and
+        Products
+    end note
+
+    class Tag {
+        String : name
+        String : value
+    }
+
+    note top
+        Most entities will
+        allow any number of
+        tags and URL links.
+    end note
+
+    class UrlLink {
+        String : name
+        URL : url
+    }
+
+}
+
+package CoreBusiness {
+
+    class Person #lightgreen {
+        String : firstName
+        String : familyName
+        boolean : isCustomer()
+        boolean : isPartner()
+        boolean : isAutheticated()
+        boolean : isWebUser()
+    }
+
+    class Profile #lightgreen {
+        String : description
+        File : picture
+    }
+
+    Person *-- Profile
+    Person *-- Resume
+
+    class Resume {
+
+    }
+
+    class CustomerInteraction #lightgreen {
+        Timestamp : timeStamp
+        InteractionKind : kind
+    }
+
+    note right
+        All interactions including
+        web page views, clicks,
+        phone calls, etc.
+        Association to a Customer
+        might be loosely defined.
+    end note
+
+    class WebInteractionInfo {
+        IPAddress : ipAddress
+        URL: fromUrl
+        URL: targetUrl
+    }
+    CustomerInteraction *-- "0,1" WebInteractionInfo
+
+    CustomerInteraction "1,*" o-- "0,1" Person
+
+    class P2BRelationship {
+        P2BRKind : kind
+    }
+    class P2BRKind {
+        CUSTOMER, EMPLOYEE, HR,
+        USER_GROUP
+    }
+    P2BRelationship o- "kind" P2BRKind
+
+    class B2BRelationship {
+        B2BRKind : kind
+    }
+    class B2BRKind {
+        PROVIDER,
+        CONSUMER,
+        COMPETITOR
+    }
+    B2BRelationship o- "kind" B2BRKind
+
+    class P2PRelationship {
+        P2PRKind : kind
+    }
+    class P2PRKind {
+        FRIEND, COWORKER, SELF
+    }
+    P2PRelationship o- "kind" P2PRKind
+
+    class Business <<Contact>> #lightgreen {
+        boolean : isBusiness
+        boolean : isPartner
+        String : name
+        String : stockSymbol
+        {list} EmailAddress : emailAddr
+        {list} PhoneNumber : phoneNumber
+    }
+    Business "from" -- "to" Business
+    (Business, Business) .. B2BRelationship
+
+    (Person, Business) .. P2BRelationship
+
+    (Person, Person) .. P2PRelationship
+
+    Business -- "1,*" Location
+
+    class Location {
+        country
+        city
+        street
+        GPS : gps
+    }
+
+    abstract Contact {
+    }
+
+}
+
+' Core +-- CoreBusiness
+
+package ProductCatalog {
+
+    class Product <<AbstractThing>> #lightgreen {
+        UUID : modelNumber
+        ProductKind : productKind
+    }
+
+    ProductVersion o-- "retailer" Business
+    Product o-- "manufacturer" Business
+
+    Product "left *" -- "right *" Product
+    Product o- "kind" ProductKind
+
+    (Product, Product) .. ConfigRule
+
+    class ConfigRule {
+        Kind: ruleKind
+    }
+
+    note top
+        E.g., dependency,
+        compatibility,
+        composition,
+        aggregation
+    end note
+
+    class ProductVersion #lightgreen {
+        int major
+        int minor
+        int release
+        String releaseTag
+        ReleaseState : releaseState
+
+        boolean : isRelease()
+    }
+
+    Product o-- "0,*" ProductVersion
+
+    class ProductKind #lightgreen {
+        HARD_GOOD
+        SERVICE
+        SOFTWARE
+    }
+
+}
+
+' CoreBusiness +-- ProductCatalog
+
+package Engineering {
+
+    class ProductSpecification
+    ProductSpecification --> ProductVersion
+
+}
+
+package Marketing {
+
+    class MarketingProductSpecification
+    class MarketingComm
+
+    MarketingProductSpecification --> ProductVersion
+    MarketingProductSpecification --|> ProductSpecification
+}
+
+package ProductDelivery {
+
+    class ProductInstance #lightgreen {
+        UUID: serialNumber
+    }
+
+    ProductInstance --> "1" ProductVersion
+    ProductInstance --> "1" SoftwareUser
+
+}
+
+package SoftwareEngineering {
+
+    class SourceCode
+    SourceCode -up-|> ProductSpecification
+
+}
+
+package SoftwareProducts {
+
+    class SoftwareProduct #lightgreen {
+    }
+    SoftwareProduct -up-|> Product
+    SoftwareUser o-- SoftwareProduct
+
+    class Application
+
+    Application -up-|> SoftwareProduct
+
+    class Service
+
+    Service -up-|> SoftwareProduct
+
+    Person *-- SoftwareUser
+
+    class SoftwareUser <<Accessor>> #lightgreen {
+        String : userName
+        byte[] : password
+    }
+
+}
+
+package DigitalSecurity {
+
+    interface Accessor {
+    }
+
+    class AuthenticationCertificate {
+        URN: commonFQName
+        PublicKey : publicKey
+        PrivateKey : privateKey
+    }
+
+    Accessor "1" *-- AuthenticationCertificate
+
+    class AccessControlRule {
+    }
+    note top
+        Simple or complex rules
+    end note
+    AccessControlRule *-- "accessor" Accessor
+
+}
+
+package Financial {
+
+    class PurchaseOrder {
+        FullfillmentState : state
+    }
+    PurchaseOrder o-- "1,*" ExternalPaymentAccount
+
+    class PurchaseItem {
+        int : quantity
+        float : unitPrice
+    }
+
+    PurchaseItem o... ProductVersion
+
+    PurchaseOrder -- "items 1,*" PurchaseItem
+
+    class CustomerAccount {
+        EmailAddress : primaryEmailAddr
+    }
+    CustomerAccount "1" -- "0,*" ExternalPaymentAccount
+    Person *-- "0,1" CustomerAccount
+
+    class ExternalPaymentAccount {
+
+    }
+
+    class CCPaymentAccount {
+
+    }
+    CCPaymentAccount -up-|> ExternalPaymentAccount
+
+}
+
+' CoreBusiness +-- Financial
+
+@enduml
