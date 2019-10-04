@@ -24,3 +24,5 @@ hs_err_pid*
 
 target/
 node/
+#node_modules/
+#/user-ui-react/node_modules/
