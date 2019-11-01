@@ -10,13 +10,6 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <repositories>
-<!--        <repository>-->
-<!--            <id>local</id>-->
-<!--            <url>/Users/jcoles/.m2/repository</url>-->
-<!--        </repository>-->
-    </repositories>
-
     <artifactId>userdb-service-resteasy-mongo</artifactId>
 
     <dependencies>
@@ -89,7 +82,7 @@
         </dependency>
         <dependency>
             <groupId>org.jkcsoft</groupId>
-            <artifactId>jasmin-shared-api</artifactId>
+            <artifactId>demo-shared-api</artifactId>
         </dependency>
 
     </dependencies>

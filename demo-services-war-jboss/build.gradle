@@ -1,0 +1,9 @@
+plugins {
+    id 'war'
+}
+
+dependencies {
+    compile project(':services-core-resteasy')
+    compile project(':user-service-resteasy')
+    compile project(':userdb-service-resteasy-mongo')
+}

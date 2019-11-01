@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/demo-services-war-jboss" />
+            <option value="$PROJECT_DIR$/demo-services-war-tomcat" />
+            <option value="$PROJECT_DIR$/demo-shared-api" />
+            <option value="$PROJECT_DIR$/demo-ui-angular" />
+            <option value="$PROJECT_DIR$/demo-ui-react" />
+            <option value="$PROJECT_DIR$/demo-ui-react-simple" />
+            <option value="$PROJECT_DIR$/sample-service-resteasy" />
+            <option value="$PROJECT_DIR$/sample-ui-basic-war" />
+            <option value="$PROJECT_DIR$/services-core-resteasy" />
+            <option value="$PROJECT_DIR$/test-harness" />
+            <option value="$PROJECT_DIR$/user-service-javax" />
+            <option value="$PROJECT_DIR$/user-service-raw" />
+            <option value="$PROJECT_DIR$/user-service-resteasy" />
+            <option value="$PROJECT_DIR$/userdb-service-resteasy-mongo" />
+          </set>
+        </option>
+        <option name="useAutoImport" value="true" />
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

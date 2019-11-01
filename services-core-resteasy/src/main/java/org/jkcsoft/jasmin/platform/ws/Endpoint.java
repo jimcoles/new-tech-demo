@@ -1,5 +1,8 @@
 package org.jkcsoft.jasmin.platform.ws;
 
+import java.net.URI;
+import java.net.URL;
+
 /**
  * @author Jim Coles
  */
@@ -33,4 +36,7 @@ public class Endpoint {
         return port;
     }
 
+    public String toUriTemplate() {
+        return protocol + "://" + host + ":" + port;
+    }
 }

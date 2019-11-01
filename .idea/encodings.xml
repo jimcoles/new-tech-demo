@@ -2,19 +2,20 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/jasmin-services-war-tomcat" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/jasmin-shared-api" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/resteasy-sample-ws" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-services-war-jboss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-services-war-tomcat" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-shared-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-ui-angular" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-ui-react" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-ui-react-simple" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sample-service-resteasy" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sample-ui-basic-war" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/services-core-resteasy" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test-harness" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/user-service-docker" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/user-service-javax" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/user-service-raw" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/user-service-resteasy" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/user-ui-angular" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/user-ui-react" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/user-ui-react-simple" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/user-webapp" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/userdb-service-resteasy-mongo" charset="UTF-8" />
   </component>
 </project>

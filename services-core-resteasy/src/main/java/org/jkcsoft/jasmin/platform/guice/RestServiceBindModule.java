@@ -56,6 +56,9 @@ public class RestServiceBindModule extends AbstractModule {
                     try {
                         Class<AppInfoProvider> classAip = (Class<AppInfoProvider>) clazz;
                         AppInfoProvider aip = classAip.getDeclaredConstructor().newInstance();
+                        //
+                        bind(aip.getApplicationClass());
+                        //
                         for (Class serviceClass : aip.getServiceClasses()) {
                             bindAndRegister(serviceClass);
                         }

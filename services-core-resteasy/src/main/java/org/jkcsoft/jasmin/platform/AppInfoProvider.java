@@ -1,5 +1,7 @@
 package org.jkcsoft.jasmin.platform;
 
+import javax.ws.rs.core.Application;
+
 /**
  * @author Jim Coles
  */
@@ -11,6 +13,7 @@ public interface AppInfoProvider {
      * @return All Resteasy providers.
      */
 
+    Class<? extends Application> getApplicationClass();
     Class[] getServiceClasses();
 
 }

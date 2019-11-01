@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>new-tech-demo</artifactId>
+        <groupId>org.jkcsoft</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>demo-services-war-jboss</artifactId>
+    <description>A WAR intended for JBOSS which knows about RESTEasy annotations</description>
+    <packaging>war</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jkcsoft</groupId>
+            <artifactId>services-core-resteasy</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jkcsoft</groupId>
+            <artifactId>user-service-resteasy</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jkcsoft</groupId>
+            <artifactId>userdb-service-resteasy-mongo</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>demo-services</finalName>
+    </build>
+
+</project>

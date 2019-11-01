@@ -8,6 +8,25 @@
         <option value="$PROJECT_DIR$/user-react-gulp-ui-war/pom.xml" />
       </list>
     </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/demo-services-war-jboss/pom.xml" />
+        <option value="$PROJECT_DIR$/demo-services-war-tomcat/pom.xml" />
+        <option value="$PROJECT_DIR$/demo-shared-api/pom.xml" />
+        <option value="$PROJECT_DIR$/demo-ui-angular/pom.xml" />
+        <option value="$PROJECT_DIR$/demo-ui-react-simple/pom.xml" />
+        <option value="$PROJECT_DIR$/demo-ui-react/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/sample-service-resteasy/pom.xml" />
+        <option value="$PROJECT_DIR$/sample-ui-basic-war/pom.xml" />
+        <option value="$PROJECT_DIR$/services-core-resteasy/pom.xml" />
+        <option value="$PROJECT_DIR$/test-harness/pom.xml" />
+        <option value="$PROJECT_DIR$/user-service-javax/pom.xml" />
+        <option value="$PROJECT_DIR$/user-service-raw/pom.xml" />
+        <option value="$PROJECT_DIR$/user-service-resteasy/pom.xml" />
+        <option value="$PROJECT_DIR$/userdb-service-resteasy-mongo/pom.xml" />
+      </set>
+    </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_12" default="false" project-jdk-name="12" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />

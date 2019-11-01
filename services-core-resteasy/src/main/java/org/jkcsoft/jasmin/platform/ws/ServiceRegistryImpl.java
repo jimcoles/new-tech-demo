@@ -33,16 +33,16 @@ public class ServiceRegistryImpl implements ServiceRegistry {
         registerLocalRsWsMethods(Endpoint.ENDPOINT_LOCALHOST, rsWsClazz);
     }
 
-
     public void registerLocalRsWsMethods(Endpoint endpoint, Class rsWsClazz) {
         RsServiceInfo si = buildRsWsServiceInfo(endpoint, rsWsClazz);
         try {
-            serviceInfoMap.put(si.getUri().toURL().toString(), si);
+            String classPath = getPathValue(rsWsClazz);
             for (Method jMethod : rsWsClazz.getMethods()) {
                 if (AnnoUtil.hasAnno(jMethod, Path.class)) {
                     String methodPath = getPathValue(jMethod);
                 }
             }
+            serviceInfoMap.put(si.getUri().toURL().toString(), si);
         }
         catch (MalformedURLException e) {
             log.error("very surprised at this exception", e);

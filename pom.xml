@@ -160,7 +160,7 @@
             </dependency>
             <dependency>
                 <groupId>org.jkcsoft</groupId>
-                <artifactId>jasmin-shared-api</artifactId>
+                <artifactId>demo-shared-api</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
@@ -175,7 +175,7 @@
             </dependency>
             <dependency>
                 <groupId>org.jkcsoft</groupId>
-                <artifactId>user-ui-react</artifactId>
+                <artifactId>demo-ui-react</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
 
@@ -190,25 +190,26 @@
 
         <!-- App modules -->
 
-        <module>jasmin-shared-api</module>
+        <module>demo-shared-api</module>
 
-        <module>user-webapp</module>
-        <module>user-ui-react-simple</module>
+        <module>demo-ui-react-simple</module>
         <module>user-service-raw</module>
         <module>user-service-resteasy</module>
         <module>userdb-service-resteasy-mongo</module>
         <module>test-harness</module>
-        <module>user-ui-angular</module>
+        <module>demo-ui-angular</module>
         <module>user-service-javax</module>
 
         <!-- Assemblies in various forms -->
-        <module>jasmin-services-war-tomcat</module>
-        <module>user-ui-react</module>
+        <module>demo-services-war-tomcat</module>
+        <module>demo-services-war-jboss</module>
+        <module>demo-ui-react</module>
         <!--        <module>user-ms-docker</module>-->
 
         <!-- Sample modules -->
 
-        <module>resteasy-sample-ws</module>
+        <module>sample-service-resteasy</module>
+        <module>sample-ui-basic-war</module>
 
     </modules>
 

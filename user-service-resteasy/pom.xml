@@ -78,7 +78,7 @@
         </dependency>
         <dependency>
             <groupId>org.jkcsoft</groupId>
-            <artifactId>jasmin-shared-api</artifactId>
+            <artifactId>demo-shared-api</artifactId>
         </dependency>
 
     </dependencies>

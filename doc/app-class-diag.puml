@@ -42,7 +42,7 @@ package CoreBusiness {
         String : familyName
         boolean : isCustomer()
         boolean : isPartner()
-        boolean : isAutheticated()
+        boolean : isAuthenticated()
         boolean : isWebUser()
     }
 

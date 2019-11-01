@@ -6,27 +6,93 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="demo-ui-react-simple" />
+        <module name="demo-services-war-tomcat" />
+        <module name="demo-ui-angular" />
         <module name="test-harness" />
         <module name="userdb-service-resteasy-mongo" />
+        <module name="demo-shared-api" />
         <module name="user-service-resteasy" />
-        <module name="jasmin-shared-api" />
-        <module name="user-ui-react" />
-        <module name="user-service-javax" />
-        <module name="resteasy-sample-ws" />
+        <module name="demo-ui-react" />
+        <module name="sample-ui-basic-war" />
         <module name="user-service-raw" />
-        <module name="user-ui-react-simple" />
-        <module name="user-ui-angular" />
-        <module name="jasmin-services-war-tomcat" />
-        <module name="user-webapp" />
+        <module name="user-service-javax" />
+        <module name="sample-service-resteasy" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="demo-services-war-tomcat" target="12" />
+      <module name="demo-shared-api" target="12" />
+      <module name="demo-ui-angular" target="12" />
+      <module name="demo-ui-react" target="12" />
+      <module name="demo-ui-react-simple" target="12" />
+      <module name="new-tech-demo.demo-services-war-tomcat.main" target="1.8" />
+      <module name="new-tech-demo.demo-services-war-tomcat.test" target="1.8" />
+      <module name="new-tech-demo.demo-shared-api.main" target="1.8" />
+      <module name="new-tech-demo.demo-shared-api.test" target="1.8" />
+      <module name="new-tech-demo.demo-ui-angular.main" target="1.8" />
+      <module name="new-tech-demo.demo-ui-angular.test" target="1.8" />
+      <module name="new-tech-demo.demo-ui-react-simple.main" target="1.8" />
+      <module name="new-tech-demo.demo-ui-react-simple.test" target="1.8" />
+      <module name="new-tech-demo.demo-ui-react.main" target="1.8" />
+      <module name="new-tech-demo.demo-ui-react.test" target="1.8" />
+      <module name="new-tech-demo.sample-service-resteasy.main" target="1.8" />
+      <module name="new-tech-demo.sample-service-resteasy.test" target="1.8" />
+      <module name="new-tech-demo.sample-ui-basic-war.main" target="1.8" />
+      <module name="new-tech-demo.sample-ui-basic-war.test" target="1.8" />
+      <module name="new-tech-demo.services-core-resteasy.main" target="1.8" />
+      <module name="new-tech-demo.services-core-resteasy.test" target="1.8" />
+      <module name="new-tech-demo.test-harness.main" target="1.8" />
+      <module name="new-tech-demo.test-harness.test" target="1.8" />
+      <module name="new-tech-demo.user-service-javax.main" target="1.8" />
+      <module name="new-tech-demo.user-service-javax.test" target="1.8" />
+      <module name="new-tech-demo.user-service-raw.main" target="1.8" />
+      <module name="new-tech-demo.user-service-raw.test" target="1.8" />
+      <module name="new-tech-demo.user-service-resteasy.main" target="1.8" />
+      <module name="new-tech-demo.user-service-resteasy.test" target="1.8" />
+      <module name="new-tech-demo.userdb-service-resteasy-mongo.main" target="1.8" />
+      <module name="new-tech-demo.userdb-service-resteasy-mongo.test" target="1.8" />
+      <module name="sample-service-resteasy" target="1.7" />
+      <module name="sample-ui-basic-war" target="12" />
+      <module name="services-core-resteasy" target="12" />
+      <module name="test-harness" target="12" />
       <module name="user-ms-docker" target="1.8" />
       <module name="user-react-gulp-js" target="12" />
+      <module name="user-service-javax" target="12" />
+      <module name="user-service-raw" target="12" />
+      <module name="user-service-resteasy" target="12" />
+      <module name="userdb-service-resteasy-mongo" target="12" />
+      <module name="win.demo-services-war-tomcat.main" target="1.8" />
+      <module name="win.demo-services-war-tomcat.test" target="1.8" />
+      <module name="win.demo-shared-api.main" target="1.8" />
+      <module name="win.demo-shared-api.test" target="1.8" />
+      <module name="win.demo-ui-angular.main" target="1.8" />
+      <module name="win.demo-ui-angular.test" target="1.8" />
+      <module name="win.demo-ui-react-simple.main" target="1.8" />
+      <module name="win.demo-ui-react-simple.test" target="1.8" />
+      <module name="win.demo-ui-react.main" target="1.8" />
+      <module name="win.demo-ui-react.test" target="1.8" />
+      <module name="win.sample-service-resteasy.main" target="1.8" />
+      <module name="win.sample-service-resteasy.test" target="1.8" />
+      <module name="win.sample-ui-basic-war.main" target="1.8" />
+      <module name="win.sample-ui-basic-war.test" target="1.8" />
+      <module name="win.services-core-resteasy.main" target="1.8" />
+      <module name="win.services-core-resteasy.test" target="1.8" />
+      <module name="win.test-harness.main" target="1.8" />
+      <module name="win.test-harness.test" target="1.8" />
+      <module name="win.user-service-javax.main" target="1.8" />
+      <module name="win.user-service-javax.test" target="1.8" />
+      <module name="win.user-service-raw.main" target="1.8" />
+      <module name="win.user-service-raw.test" target="1.8" />
+      <module name="win.user-service-resteasy.main" target="1.8" />
+      <module name="win.user-service-resteasy.test" target="1.8" />
+      <module name="win.userdb-service-resteasy-mongo.main" target="1.8" />
+      <module name="win.userdb-service-resteasy-mongo.test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="new-tech-demo.services-core-resteasy" options="-proc:none" />
       <module name="services-core-resteasy" options="-proc:none" />
     </option>
   </component>

@@ -74,26 +74,9 @@ public class UserService extends AbstractWebService {
         return Response.ok().build();
     }
 
-    private HttpRequest buildUserDbGetRequest(String userName) {
-        return getBaseRequestBuilder()
-                          .uri(getUserDbUri(userName))
-                          .GET()
-                          .build();
-    }
-
-    private URI getUserDbUri(String userName) {
-        UriBuilder uriBuilder = getUserDbUriBuilder();
-        uriBuilder.queryParam(PARAM_USERNAME, userName);
-        return uriBuilder.build();
-    }
-
-    private UriBuilder getUserDbUriBuilder() {
-        return getEndpointUriBuilder().path(PATH_USER_DB);
-    }
-
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/user/reference")
+    @Path("/reference")
     public Response getUserFixed() {
         log.debug("in getUserFixed");
         User user = new User();
@@ -112,6 +95,24 @@ public class UserService extends AbstractWebService {
 
         log.debug("returning: " + user);
         return Response.ok(user).build();
+    }
+
+    private HttpRequest buildUserDbGetRequest(String userName) {
+        return getBaseRequestBuilder()
+                          .uri(getUserDbUri(userName))
+                          .GET()
+                          .build();
+    }
+
+    private URI getUserDbUri(String userName) {
+        UriBuilder uriBuilder = getUserDbUriBuilder();
+        uriBuilder.queryParam(PARAM_USERNAME, userName);
+        return uriBuilder.build();
+    }
+
+    private UriBuilder getUserDbUriBuilder() {
+        // TODO User service registry to lookup the URI which might be remote or local host
+        return getLocalEndpointUriBuilder().path(PATH_USER_DB);
     }
 
 }

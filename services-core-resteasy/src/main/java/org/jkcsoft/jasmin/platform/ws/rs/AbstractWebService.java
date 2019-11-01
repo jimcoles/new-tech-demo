@@ -44,8 +44,8 @@ public class AbstractWebService {
                           .header("Content-Type", "application/json");
     }
 
-    protected UriBuilder getEndpointUriBuilder() {
-        return UriBuilder.fromUri(Endpoint.ENDPOINT_LOCALHOST.toString());
+    protected UriBuilder getLocalEndpointUriBuilder() {
+        return UriBuilder.fromUri(Endpoint.ENDPOINT_LOCALHOST.toUriTemplate());
     }
 
     protected HttpClient getHttpClient() {

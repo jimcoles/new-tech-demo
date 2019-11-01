@@ -39,7 +39,7 @@ public class RsServiceInfo {
     }
 
     protected UriBuilder buildUriBuilder() {
-        return null;
+        return UriBuilder.fromUri(endpoint.toUriTemplate());
     }
 
 }
