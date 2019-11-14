@@ -3,7 +3,7 @@
  */
 
 dependencies {
-    compile 'org.jboss.resteasy:resteasy-jaxrs:3.7.0.Final'
-    compile 'javax.persistence:javax.persistence-api:2.2'
+    implementation 'org.jboss.resteasy:resteasy-jaxrs:3.7.0.Final'
+    implementation 'javax.persistence:javax.persistence-api:2.2'
     compileOnly 'javax:javaee-api:7.0'
 }

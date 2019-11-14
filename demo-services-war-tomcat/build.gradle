@@ -4,11 +4,23 @@
 
 plugins {
     id 'war'
-
 }
+
+war.archiveFileName = "demo-services.war"
 
 dependencies {
-    compile project(':services-core-resteasy')
-    compile project(':user-service-resteasy')
-    compile project(':userdb-service-resteasy-mongo')
+    
+    implementation( project(':services-core-resteasy') ) {
+
+    }
+    implementation project(':demo-shared-api')
+    implementation project(':user-service-resteasy')
+    implementation project(':userdb-service-resteasy-mongo')
+
+    compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.0'
+
+    constraints {
+
+    }
 }
+

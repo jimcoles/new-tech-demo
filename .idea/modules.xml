@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/demo-services-war-tomcat/demo-services-war-tomcat.iml" filepath="$PROJECT_DIR$/demo-services-war-tomcat/demo-services-war-tomcat.iml" />
-      <module fileurl="file://$PROJECT_DIR$/demo-shared-api/demo-shared-api.iml" filepath="$PROJECT_DIR$/demo-shared-api/demo-shared-api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/demo-ui-angular/demo-ui-angular.iml" filepath="$PROJECT_DIR$/demo-ui-angular/demo-ui-angular.iml" />
-      <module fileurl="file://$PROJECT_DIR$/demo-ui-react/demo-ui-react.iml" filepath="$PROJECT_DIR$/demo-ui-react/demo-ui-react.iml" />
-      <module fileurl="file://$PROJECT_DIR$/demo-ui-react-simple/demo-ui-react-simple.iml" filepath="$PROJECT_DIR$/demo-ui-react-simple/demo-ui-react-simple.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo-services-war-tomcat/new-tech-demo.demo-services-war-tomcat.main.iml" filepath="$PROJECT_DIR$/.idea/modules/demo-services-war-tomcat/new-tech-demo.demo-services-war-tomcat.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo-services-war-tomcat/new-tech-demo.demo-services-war-tomcat.test.iml" filepath="$PROJECT_DIR$/.idea/modules/demo-services-war-tomcat/new-tech-demo.demo-services-war-tomcat.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo-shared-api/new-tech-demo.demo-shared-api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/demo-shared-api/new-tech-demo.demo-shared-api.main.iml" />
@@ -33,14 +28,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/user-service-resteasy/new-tech-demo.user-service-resteasy.test.iml" filepath="$PROJECT_DIR$/.idea/modules/user-service-resteasy/new-tech-demo.user-service-resteasy.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/userdb-service-resteasy-mongo/new-tech-demo.userdb-service-resteasy-mongo.main.iml" filepath="$PROJECT_DIR$/.idea/modules/userdb-service-resteasy-mongo/new-tech-demo.userdb-service-resteasy-mongo.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/userdb-service-resteasy-mongo/new-tech-demo.userdb-service-resteasy-mongo.test.iml" filepath="$PROJECT_DIR$/.idea/modules/userdb-service-resteasy-mongo/new-tech-demo.userdb-service-resteasy-mongo.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sample-service-resteasy/sample-service-resteasy.iml" filepath="$PROJECT_DIR$/sample-service-resteasy/sample-service-resteasy.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sample-ui-basic-war/sample-ui-basic-war.iml" filepath="$PROJECT_DIR$/sample-ui-basic-war/sample-ui-basic-war.iml" />
-      <module fileurl="file://$PROJECT_DIR$/services-core-resteasy/services-core-resteasy.iml" filepath="$PROJECT_DIR$/services-core-resteasy/services-core-resteasy.iml" />
-      <module fileurl="file://$PROJECT_DIR$/test-harness/test-harness.iml" filepath="$PROJECT_DIR$/test-harness/test-harness.iml" />
-      <module fileurl="file://$PROJECT_DIR$/user-service-javax/user-service-javax.iml" filepath="$PROJECT_DIR$/user-service-javax/user-service-javax.iml" />
-      <module fileurl="file://$PROJECT_DIR$/user-service-raw/user-service-raw.iml" filepath="$PROJECT_DIR$/user-service-raw/user-service-raw.iml" />
-      <module fileurl="file://$PROJECT_DIR$/user-service-resteasy/user-service-resteasy.iml" filepath="$PROJECT_DIR$/user-service-resteasy/user-service-resteasy.iml" />
-      <module fileurl="file://$PROJECT_DIR$/userdb-service-resteasy-mongo/userdb-service-resteasy-mongo.iml" filepath="$PROJECT_DIR$/userdb-service-resteasy-mongo/userdb-service-resteasy-mongo.iml" />
     </modules>
   </component>
 </project>
