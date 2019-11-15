@@ -6,9 +6,16 @@ String dingo = "dingo"
 description = "A place to get hands-on with new technologies like Javascript, micro-services"+
         ", and NoSQL."
 
+plugins {
+    id 'org.springframework.boot' version '2.2.1.RELEASE'
+}
+
 buildscript {
     ext {
         jbossVersion = '3.7.0.Final'
+        libraries = [
+            servicesCoreResteasy: project(':services-core-resteasy')
+        ]
     }
 }
 
@@ -20,6 +27,7 @@ allprojects {
 subprojects {
     apply plugin: 'java'
     apply plugin: 'maven-publish'
+    apply plugin: 'org.springframework.boot'
 
     repositories {
         mavenLocal()
