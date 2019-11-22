@@ -10,19 +10,14 @@ war.archiveFileName = "demo-services.war"
 
 dependencies {
 
-    implementation(project(':services-core-resteasy'))
+    // No particular use pushing sub-project deps to top-level management section IMHO
+    implementation( project(':services-core-resteasy') )
+    implementation( project(':demo-shared-api') )
+    implementation( project(':user-service-resteasy') )
+    implementation( project(':userdb-service-resteasy-mongo') )
 
-    implementation project(':demo-shared-api')
-    implementation project(':user-service-resteasy')
-    implementation project(':userdb-service-resteasy-mongo')
-
-    compile( group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.0' ) {
-//        version {
-//            strictly '2.0'
-//              strictly '[1.7, 1.8['
-//              prefer '1.7.25'
-//        }
-    }
+    // The following dep is defined in top-level build.gradle 'ext'. Just trying that out but there are issues.
+    compile( libraries.javaWsRsApi )
 
     constraints {
 

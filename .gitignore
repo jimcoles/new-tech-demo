@@ -25,6 +25,7 @@ hs_err_pid*
 target/
 build/
 node/
-#node_modules/
+out/
+node_modules/
 #/demo-ui-react/node_modules/
 /log/
