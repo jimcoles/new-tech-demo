@@ -8,12 +8,12 @@ plugins {
 dependencies {
     implementation 'org.slf4j:slf4j-log4j12:1.6.4'
     //
-    implementation 'com.google.inject.extensions:guice-servlet:4.2.2'
-    implementation 'org.apache.shiro:shiro-web:1.2.3'
-    implementation 'org.apache.shiro:shiro-guice:1.2.3'
+    // The most neutral CDI APIs from Oracle/Java
     //
-    implementation "org.jboss.resteasy:resteasy-jaxrs:" + jbossVersion
-    implementation "org.jboss.resteasy:resteasy-guice:" + jbossVersion
+    implementation 'javax.inject:javax.inject:1'
+    implementation 'javax.enterprise:cdi-api:2.0.SP1'
+    //
+    compileOnly "org.jboss.resteasy:resteasy-jaxrs:" + jbossVersion
     //
     implementation 'org.jboss.resteasy:resteasy-jackson-provider:2.2.1.GA'
     //
@@ -23,4 +23,6 @@ dependencies {
     compileOnly 'javax.servlet:javax.servlet-api:3.0.1'
     //
     implementation 'org.jkcsoft:java-utils:1.0-SNAPSHOT'
+    //
+    testImplementation "org.jboss.resteasy:resteasy-jaxrs:" + jbossVersion
 }

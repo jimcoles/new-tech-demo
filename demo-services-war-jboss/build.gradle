@@ -8,4 +8,6 @@ dependencies {
     implementation project(':services-core-resteasy')
     implementation project(':user-service-resteasy')
     implementation project(':userdb-service-resteasy-mongo')
+
+//    implementation 'org.jboss.resteasy:resteasy-servlet-initializer:' + jbossVersion
 }

@@ -4,6 +4,7 @@ import org.jkcsoft.jasmin.platform.utils.AnnoUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.enterprise.inject.Default;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.UriBuilder;
 import java.lang.reflect.Method;
@@ -14,6 +15,7 @@ import java.util.Map;
 /**
  * @author Jim Coles
  */
+@Default
 public class ServiceRegistryImpl implements ServiceRegistry {
 
     private static final Logger log = LoggerFactory.getLogger(ServiceRegistryImpl.class);

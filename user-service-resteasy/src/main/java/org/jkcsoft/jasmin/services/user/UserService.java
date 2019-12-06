@@ -1,13 +1,13 @@
 package org.jkcsoft.jasmin.services.user;
 
-import com.google.inject.Inject;
-import com.google.inject.servlet.RequestScoped;
 import org.jkcsoft.jasmin.platform.ws.MethodInfo;
 import org.jkcsoft.jasmin.platform.ws.ServiceRegistry;
 import org.jkcsoft.jasmin.platform.ws.rs.AbstractWebService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.*;
@@ -27,7 +27,7 @@ import java.net.http.HttpResponse;
  * @author pablo.biagioli
  *
  */
-@RequestScoped
+//@RequestScoped
 @Path("/user")
 public class UserService extends AbstractWebService {
 
@@ -44,8 +44,10 @@ public class UserService extends AbstractWebService {
     private MethodInfo userDbGet;
 
     @Inject
-    public UserService(ServiceRegistry serviceRegistry, HttpServletRequest request, HttpServletResponse response) {
-        super(serviceRegistry, request, response);
+    public UserService(ServiceRegistry serviceRegistry)
+//        , HttpServletRequest request, HttpServletResponse response)
+    {
+        super(serviceRegistry, null, null);
         userDbPut = serviceRegistry.getMethodInfo("jasmin", "userdb", HttpMethod.PUT);
         userDbPost = serviceRegistry.getMethodInfo("jasmin", "userdb", HttpMethod.POST);
         userDbGet = serviceRegistry.getMethodInfo("jasmin", "userdb", HttpMethod.GET);

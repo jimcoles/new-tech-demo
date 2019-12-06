@@ -1,8 +1,6 @@
 package org.jkcsoft.jasmin.services.userdb;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.inject.Inject;
-import com.google.inject.servlet.RequestScoped;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoCredential;
 import com.mongodb.client.MongoCollection;
@@ -16,6 +14,8 @@ import org.jkcsoft.jasmin.platform.ws.rs.AbstractWebService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.*;
@@ -32,7 +32,7 @@ import java.util.Map;
  * @author pablo.biagioli
  *
  */
-@RequestScoped
+//@RequestScoped
 @Path("/userdb")
 public class UserMongoDbService extends AbstractWebService {
 
@@ -42,14 +42,20 @@ public class UserMongoDbService extends AbstractWebService {
     private MongoDatabase mongoDb;
     private UserPojoBsonTrans bsonTrans;
 
+//    /** JBoss wants a no-arg constructor */
+//    public UserMongoDbService() {
+//        super(null, null, null);
+//    }
+
     /**
      * NOTE: This form of constructor optional.
      */
     @Inject
-    public UserMongoDbService(ServiceRegistry serviceRegistry, HttpServletRequest request,
-                              HttpServletResponse response)
+    public UserMongoDbService(ServiceRegistry serviceRegistry
+//        , HttpServletRequest request, HttpServletResponse response
+    )
     {
-        super(serviceRegistry, request, response);
+        super(serviceRegistry, null, null);
         this.bsonTrans = new UserPojoBsonTrans();
     }
 
@@ -147,7 +153,7 @@ public class UserMongoDbService extends AbstractWebService {
     }
 
     public static void main(String[] args) {
-        UserMongoDbService service = new UserMongoDbService(null, null, null);
+        UserMongoDbService service = new UserMongoDbService(null);
         service.getDbConnection();
         testLog("successful DB connection test");
     }

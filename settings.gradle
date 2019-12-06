@@ -5,6 +5,7 @@
 rootProject.name = 'new-tech-demo'
 //
 include(':services-core-resteasy')
+include(':services-core-guice')
 include(':demo-shared-api')
 include(':user-service-raw')
 include(':user-service-resteasy')
@@ -21,3 +22,4 @@ include(':sample-ui-basic-war')
 //
 include(':demo-services-war-tomcat')
 include(':demo-services-war-jboss')
+

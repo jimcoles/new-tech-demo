@@ -19,6 +19,7 @@
             <option value="$PROJECT_DIR$/demo-ui-react-simple" />
             <option value="$PROJECT_DIR$/sample-service-resteasy" />
             <option value="$PROJECT_DIR$/sample-ui-basic-war" />
+            <option value="$PROJECT_DIR$/services-core-guice" />
             <option value="$PROJECT_DIR$/services-core-resteasy" />
             <option value="$PROJECT_DIR$/test-harness" />
             <option value="$PROJECT_DIR$/user-service-javax" />

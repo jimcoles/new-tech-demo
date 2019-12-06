@@ -6,7 +6,7 @@ import javax.ws.rs.core.Application;
 /**
  * @author Jim Coles
  */
-@ApplicationPath("jasmin")
+@ApplicationPath("/rest")
 public class JasminApp extends Application {
 
 }

@@ -1,10 +1,9 @@
 package org.jkcsoft.jasmin.platform.model;
 
-import com.google.inject.Inject;
-import com.google.inject.Injector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Inject;
 import javax.inject.Singleton;
 
 /**
@@ -24,21 +23,16 @@ public class AppHome {
 //        return instance;
 //    }
 
-    private Injector injector;
     private AppConfig appConfig;
 
     @Inject
-    public AppHome(Injector injector, AppConfig appConfig) {
-        this.injector = injector;
+    public AppHome(AppConfig appConfig) {
         this.appConfig = appConfig;
-        log.info("init {} {}", injector, appConfig);
+        log.info("init {}", appConfig);
     }
 
     public AppConfig getAppConfig() {
         return appConfig;
     }
 
-    public Injector getInjector() {
-        return injector;
-    }
 }
