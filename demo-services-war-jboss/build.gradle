@@ -4,6 +4,22 @@ plugins {
 
 war.archiveFileName = "demo-services-jboss.war"
 
+/*
+Possible exclusions to make this work:
+
+jboss-jaxb-api_2.3_spec-1.0.1.Final.jar
+     0 Mon Jan 22 15:37:44 CST 2018 javax/xml/bind/
+
+validation-api-2.0.1.Final.jar
+     0 Tue Dec 19 16:23:24 CST 2017 javax/validation/
+
+jboss-jaxrs-api_2.1_spec-1.0.2.Final.jar
+     0 Mon Sep 17 10:41:24 CDT 2018 javax/ws/
+
+activation-1.1.1.jar
+     0 Wed Oct 24 11:45:42 CDT 2007 javax/activation/
+
+ */
 dependencies {
     implementation project(':services-core-resteasy')
     implementation project(':user-service-resteasy')

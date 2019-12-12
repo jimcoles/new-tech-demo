@@ -23,7 +23,7 @@ public class UserTests {
         ObjectMapper mapper = new ObjectMapper();
         HttpServletRequest request = null;
         HttpServletResponse response = null;
-        UserMongoDbService service = new UserMongoDbService(null);
+        UserMongoDbService service = new UserMongoDbService();
         service.getStatus();;
         Object retObject = service.getUser("jcoles").getEntity();
         log.info("user: " + retObject);

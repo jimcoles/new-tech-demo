@@ -43,14 +43,16 @@ public class UserService extends AbstractWebService {
     private MethodInfo userDbPost;
     private MethodInfo userDbGet;
 
-    @Inject
-    public UserService(ServiceRegistry serviceRegistry)
+//    @Inject
+//    public UserService(ServiceRegistry serviceRegistry)
+    public UserService()
 //        , HttpServletRequest request, HttpServletResponse response)
     {
-        super(serviceRegistry, null, null);
-        userDbPut = serviceRegistry.getMethodInfo("jasmin", "userdb", HttpMethod.PUT);
-        userDbPost = serviceRegistry.getMethodInfo("jasmin", "userdb", HttpMethod.POST);
-        userDbGet = serviceRegistry.getMethodInfo("jasmin", "userdb", HttpMethod.GET);
+        super(null, null);
+        // TODO Re-route this init logic outside constructor
+//        userDbPut = getServiceRegistry().getMethodInfo("jasmin", "userdb", HttpMethod.PUT);
+//        userDbPost = getServiceRegistry().getMethodInfo("jasmin", "userdb", HttpMethod.POST);
+//        userDbGet = getServiceRegistry().getMethodInfo("jasmin", "userdb", HttpMethod.GET);
     }
 
     @GET

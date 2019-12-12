@@ -13,9 +13,9 @@ dependencies {
     implementation 'javax.inject:javax.inject:1'
     implementation 'javax.enterprise:cdi-api:2.0.SP1'
     //
-    compileOnly "org.jboss.resteasy:resteasy-jaxrs:" + jbossVersion
+    compileOnly "org.jboss.resteasy:resteasy-jaxrs:${jbossVersion}"
     //
-    implementation 'org.jboss.resteasy:resteasy-jackson-provider:2.2.1.GA'
+//    implementation 'org.jboss.resteasy:resteasy-jackson-provider:2.2.1.GA'
     //
     implementation 'com.fasterxml.jackson.core:jackson-core:2.10.0.pr1'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.0.pr1'
@@ -25,4 +25,6 @@ dependencies {
     implementation 'org.jkcsoft:java-utils:1.0-SNAPSHOT'
     //
     testImplementation "org.jboss.resteasy:resteasy-jaxrs:" + jbossVersion
+    //
+    compileOnly "org.wildfly:wildfly-dist:18.0.1.Final"
 }

@@ -50,12 +50,11 @@ public class UserMongoDbService extends AbstractWebService {
     /**
      * NOTE: This form of constructor optional.
      */
-    @Inject
-    public UserMongoDbService(ServiceRegistry serviceRegistry
+    public UserMongoDbService(
 //        , HttpServletRequest request, HttpServletResponse response
     )
     {
-        super(serviceRegistry, null, null);
+        super(null, null);
         this.bsonTrans = new UserPojoBsonTrans();
     }
 
@@ -153,7 +152,7 @@ public class UserMongoDbService extends AbstractWebService {
     }
 
     public static void main(String[] args) {
-        UserMongoDbService service = new UserMongoDbService(null);
+        UserMongoDbService service = new UserMongoDbService();
         service.getDbConnection();
         testLog("successful DB connection test");
     }

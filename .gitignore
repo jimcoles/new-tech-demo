@@ -29,3 +29,4 @@ out/
 node_modules/
 #/demo-ui-react/node_modules/
 /log/
+/tmp/
