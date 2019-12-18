@@ -3,6 +3,8 @@ package org.jkcsoft.jasmin.platform.ws.rs;
 import org.jkcsoft.jasmin.platform.ws.Endpoint;
 import org.jkcsoft.jasmin.platform.ws.ServiceRegistry;
 
+import javax.annotation.PostConstruct;
+import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Instance;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -17,11 +19,14 @@ import java.time.Duration;
  */
 public class AbstractWebService {
 
-    @Inject
-    Instance<ServiceRegistry> registrySource;
+    private Instance<ServiceRegistry> registrySource;
     private ServiceRegistry serviceRegistry;
-    private final HttpServletRequest request;
-    private final HttpServletResponse response;
+    private HttpServletRequest request;
+    private HttpServletResponse response;
+
+    public AbstractWebService() {
+
+    }
 
     public AbstractWebService(HttpServletRequest request, HttpServletResponse response)
     {
@@ -29,8 +34,18 @@ public class AbstractWebService {
         this.response = response;
     }
 
+    @PostConstruct
+    public void postConstruct() {
+
+    }
+    @Inject
+    void setRegistrySource(Instance<ServiceRegistry> registrySource) {
+        this.registrySource = registrySource;
+    }
+
     public ServiceRegistry getServiceRegistry() {
-        this.serviceRegistry = registrySource.get();
+        if (serviceRegistry == null)
+            serviceRegistry = registrySource.get();
         return serviceRegistry;
     }
 

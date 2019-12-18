@@ -25,4 +25,5 @@ dependencies {
     implementation group: 'javax.enterprise', name: 'cdi-api', version: '2.0.SP1'
 
     testImplementation 'org.jboss.resteasy:resteasy-jaxrs:3.7.0.Final'
+    testImplementation 'junit:junit:4.12'
 }

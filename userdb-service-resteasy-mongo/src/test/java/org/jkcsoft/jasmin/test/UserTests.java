@@ -18,7 +18,7 @@ public class UserTests {
 
     private static Logger log = LoggerFactory.getLogger(UserTests.class);
 
-    @Test
+//    @Test
     public void testMongoDb() {
         ObjectMapper mapper = new ObjectMapper();
         HttpServletRequest request = null;

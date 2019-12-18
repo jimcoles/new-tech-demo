@@ -17,8 +17,8 @@ dependencies {
     implementation 'org.apache.shiro:shiro-web:1.2.3'
     implementation 'org.apache.shiro:shiro-guice:1.2.3'
     //
-    implementation "org.jboss.resteasy:resteasy-jaxrs:" + jbossVersion
-    implementation "org.jboss.resteasy:resteasy-guice:" + jbossVersion
+    implementation "org.jboss.resteasy:resteasy-jaxrs:" + jBossVersion
+    implementation "org.jboss.resteasy:resteasy-guice:" + jBossVersion
     //
     implementation 'org.jboss.resteasy:resteasy-jackson-provider:2.2.1.GA'
     //

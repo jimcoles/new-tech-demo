@@ -20,7 +20,7 @@ buildscript {
          implementation fileTree('libs')
          */
 
-        jbossVersion = '3.7.0.Final'
+        jBossVersion = '3.7.0.Final'
         libraries = [
             javaWsRsApi:
                 dependencies.create('javax.ws.rs:javax.ws.rs-api') {
