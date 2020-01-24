@@ -1,8 +1,8 @@
 package org.jkcsoft.jasmin.platform.guice;
 
 import com.google.inject.Provider;
-import org.jkcsoft.jasmin.platform.ws.ServiceRegistry;
-import org.jkcsoft.jasmin.platform.ws.ServiceRegistryImpl;
+import org.jkcsoft.services.framework.ws.ServiceRegistry;
+import org.jkcsoft.services.framework.ws.ServiceRegistryImpl;
 
 /**
  * This first-class factory enables access to the central object from both inside

@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+}
+
+dependencies {
+    dependencies {
+        implementation 'org.slf4j:slf4j-api:1.7.29'
+        //
+        // The most neutral CDI APIs from Oracle/Java
+        //
+        implementation 'javax.inject:javax.inject:' + JAVAX_INJECT_VERSION
+        implementation 'javax.enterprise:cdi-api:' + CDI_API_VERSION
+    }
+}

@@ -1,15 +1,11 @@
 package org.jkcsoft.jasmin.services.user;
 
-import org.jkcsoft.jasmin.platform.ws.MethodInfo;
-import org.jkcsoft.jasmin.platform.ws.ServiceRegistry;
-import org.jkcsoft.jasmin.platform.ws.rs.AbstractWebService;
+import org.jkcsoft.services.framework.ws.MethodInfo;
+import org.jkcsoft.services.framework.ws.AbstractWebService;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -28,26 +24,25 @@ import java.net.http.HttpResponse;
  *
  */
 //@RequestScoped
+@ApplicationScoped
 @Path("/user")
 public class UserService extends AbstractWebService {
-
-    private static Logger log = LoggerFactory.getLogger(UserService.class);
-
-    //
 
     public static final String PARAM_USERNAME = "userName";
     public static final String PATH_USER_DB = "/userdb";
     public static final String ENDPOINT_LOCALHOST = "http://localhost:8080";
-//    private UriBuilder userDbUri;
+
+    // =========================================================================
+
+    @Inject private transient Logger log;
+    //    private UriBuilder userDbUri;
     private MethodInfo userDbPut;
     private MethodInfo userDbPost;
     private MethodInfo userDbGet;
 
 //    @Inject
-//    public UserService(ServiceRegistry serviceRegistry)
-    public UserService()
-//        , HttpServletRequest request, HttpServletResponse response)
-    {
+//    public UserService(@Context ServiceRegistry serviceRegistry)
+    public UserService() {
         super(null, null);
         // TODO Re-route this init logic outside constructor
 //        userDbPut = getServiceRegistry().getMethodInfo("jasmin", "userdb", HttpMethod.PUT);

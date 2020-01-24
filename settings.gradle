@@ -4,8 +4,11 @@
 
 rootProject.name = 'new-tech-demo'
 //
-include(':services-core-resteasy')
+include(':services-core-ws')
 include(':services-core-guice')
+include(':services-common-cdi')
+include(':services-framework')
+//
 include(':demo-shared-api')
 include(':user-service-raw')
 include(':user-service-resteasy')

@@ -21,9 +21,11 @@ activation-1.1.1.jar
 
  */
 dependencies {
-    implementation project(':services-core-resteasy')
+    implementation project(':services-core-ws')
+    implementation project(':services-common-cdi')
+    //
     implementation project(':user-service-resteasy')
     implementation project(':userdb-service-resteasy-mongo')
     //
-    implementation "org.jboss.resteasy:resteasy-servlet-initializer:$jBossVersion"
+    implementation "org.jboss.resteasy:resteasy-servlet-initializer:$JBOSS_VERSION"
 }

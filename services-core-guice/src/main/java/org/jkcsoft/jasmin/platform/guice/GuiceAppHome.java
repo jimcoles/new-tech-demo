@@ -2,8 +2,8 @@ package org.jkcsoft.jasmin.platform.guice;
 
 import com.google.inject.Inject;
 import com.google.inject.Injector;
-import org.jkcsoft.jasmin.platform.model.AppConfig;
-import org.jkcsoft.jasmin.platform.model.AppHome;
+import org.jkcsoft.services.framework.ws.AppConfig;
+import org.jkcsoft.services.framework.ws.AppHome;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

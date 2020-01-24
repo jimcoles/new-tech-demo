@@ -7,7 +7,8 @@ plugins {
 }
 
 dependencies {
-    implementation project(':services-core-resteasy')
+    //
+    implementation project(':services-core-ws')
     //
     compileOnly 'javax:javaee-api:7.0'
     compileOnly 'com.google.inject:guice:4.2.2'

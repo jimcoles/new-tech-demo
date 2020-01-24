@@ -1,0 +1,9 @@
+###
+GET http://localhost:8080/demo-services-jboss/rest/user/reference
+Accept: application/json
+
+###
+GET http://localhost:8080/demo-services-jboss/rest/user?userName=jcoles
+Accept: application/json
+
+###

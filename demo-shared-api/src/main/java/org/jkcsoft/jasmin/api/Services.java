@@ -1,8 +1,8 @@
 package org.jkcsoft.jasmin.api;
 
 import com.google.inject.Inject;
-import org.jkcsoft.jasmin.platform.ws.MethodInfo;
-import org.jkcsoft.jasmin.platform.ws.ServiceRegistry;
+import org.jkcsoft.services.framework.ws.MethodInfo;
+import org.jkcsoft.services.framework.ws.ServiceRegistry;
 
 import javax.ws.rs.HttpMethod;
 

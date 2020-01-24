@@ -2,8 +2,8 @@ package org.jkcsoft.jasmin.platform.guice;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.name.Names;
-import org.jkcsoft.jasmin.platform.model.AppConfig;
-import org.jkcsoft.jasmin.platform.model.GenericBootstrapConstants;
+import org.jkcsoft.services.framework.ws.AppConfig;
+import org.jkcsoft.services.framework.ws.GenericBootstrapConstants;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

@@ -1,9 +1,7 @@
 package org.jkcsoft.jasmin.platform.guice;
 
-import com.google.inject.Inject;
-import org.jkcsoft.jasmin.platform.model.GenericBootstrapConstants;
+import org.jkcsoft.services.framework.ws.GenericBootstrapConstants;
 
-import javax.inject.Named;
 import java.util.Properties;
 
 /**

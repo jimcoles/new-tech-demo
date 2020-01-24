@@ -11,7 +11,7 @@ war.archiveFileName = "demo-services.war"
 dependencies {
 
     // No particular use pushing sub-project deps to top-level management section IMHO
-    implementation( project(':services-core-resteasy') )
+    implementation( project(':services-core-ws') )
     implementation( project(':demo-shared-api') )
     implementation( project(':user-service-resteasy') )
     implementation( project(':userdb-service-resteasy-mongo') )

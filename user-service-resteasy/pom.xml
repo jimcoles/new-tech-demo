@@ -74,7 +74,7 @@
 
         <dependency>
             <groupId>org.jkcsoft</groupId>
-            <artifactId>services-core-resteasy</artifactId>
+            <artifactId>services-core-ws</artifactId>
         </dependency>
         <dependency>
             <groupId>org.jkcsoft</groupId>

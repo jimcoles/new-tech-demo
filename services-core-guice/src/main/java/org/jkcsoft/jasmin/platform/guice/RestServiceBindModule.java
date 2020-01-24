@@ -1,10 +1,10 @@
 package org.jkcsoft.jasmin.platform.guice;
 
 import com.google.inject.AbstractModule;
-import org.jkcsoft.jasmin.platform.AppInfoProvider;
-import org.jkcsoft.jasmin.platform.model.GenericBootstrapConstants;
-import org.jkcsoft.jasmin.platform.ws.ServiceRegistry;
-import org.jkcsoft.jasmin.platform.ws.ServiceRegistryImpl;
+import org.jkcsoft.services.framework.ws.AppInfoProvider;
+import org.jkcsoft.services.framework.ws.GenericBootstrapConstants;
+import org.jkcsoft.services.framework.ws.ServiceRegistry;
+import org.jkcsoft.services.framework.ws.ServiceRegistryImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

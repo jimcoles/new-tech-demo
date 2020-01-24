@@ -4,9 +4,9 @@ import com.google.inject.Key;
 import com.google.inject.name.Names;
 import com.google.inject.servlet.ServletModule;
 import org.apache.shiro.guice.web.GuiceShiroFilter;
-import org.jkcsoft.jasmin.platform.model.AppConfig;
-import org.jkcsoft.jasmin.platform.model.AppHome;
-import org.jkcsoft.jasmin.platform.model.GenericBootstrapConstants;
+import org.jkcsoft.services.framework.ws.AppConfig;
+import org.jkcsoft.services.framework.ws.AppHome;
+import org.jkcsoft.services.framework.ws.GenericBootstrapConstants;
 import org.jkcsoft.jasmin.platform.shiro.BootstrapShiroModule;
 import org.jkcsoft.jasmin.platform.shiro.ShiroAnnotationsModule;
 

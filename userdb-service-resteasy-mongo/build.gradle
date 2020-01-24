@@ -5,12 +5,12 @@
 dependencies {
 
     // sub-modules
-    implementation project(':services-core-resteasy')
+    implementation project(':services-core-ws')
     implementation project(':demo-shared-api')
 
     // external libs
     implementation 'junit:junit:4.12'
-    implementation 'org.slf4j:slf4j-log4j12:1.6.4'
+    implementation 'org.slf4j:slf4j-api:1.7.29'
 //    implementation 'com.google.inject.extensions:guice-servlet:3.0'
     implementation 'org.apache.shiro:shiro-web:1.2.3'
 //    implementation 'org.apache.shiro:shiro-guice:1.2.3'
