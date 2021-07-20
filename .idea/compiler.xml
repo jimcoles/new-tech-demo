@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="new-tech-demo.sample-service-resteasy" />
+        <module name="new-tech-demo.demo-services-war-tomcat" />
+        <module name="new-tech-demo.demo-services-war-jboss" />
+        <module name="new-tech-demo.user-service-javax" />
+        <module name="new-tech-demo.sample-ui-basic-war" />
+        <module name="new-tech-demo.user-service-raw" />
+        <module name="new-tech-demo.user-service-resteasy" />
+        <module name="new-tech-demo.userdb-service-resteasy-mongo" />
+        <module name="new-tech-demo.demo-ui-angular" />
+        <module name="new-tech-demo.test-harness" />
+        <module name="new-tech-demo.demo-ui-react-simple" />
+        <module name="new-tech-demo.demo-shared-api" />
+        <module name="new-tech-demo.demo-ui-react" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="12">
+      <module name="demo-services-war-jboss" target="1.5" />
+      <module name="demo-services-war-tomcat" target="1.5" />
+      <module name="demo-shared-api" target="1.5" />
+      <module name="demo-ui-angular" target="1.5" />
+      <module name="demo-ui-react" target="1.5" />
+      <module name="demo-ui-react-simple" target="1.5" />
+      <module name="sample-service-resteasy" target="1.5" />
+      <module name="sample-ui-basic-war" target="1.7" />
+      <module name="services-core-ws" target="1.5" />
+      <module name="test-harness" target="1.5" />
+      <module name="user-service-javax" target="1.5" />
+      <module name="user-service-raw" target="1.5" />
+      <module name="user-service-resteasy" target="1.5" />
+      <module name="userdb-service-resteasy-mongo" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="new-tech-demo.services-core-ws" options="-proc:none" />
+    </option>
+  </component>
+</project>

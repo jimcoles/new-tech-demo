@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/demo-services-war-jboss/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-services-war-jboss/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-services-war-tomcat/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-services-war-tomcat/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-shared-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-shared-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-ui-angular/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-ui-angular/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-ui-react-simple/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-ui-react-simple/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-ui-react/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-ui-react/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sample-service-resteasy/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sample-service-resteasy/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sample-ui-basic-war/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sample-ui-basic-war/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/services-core-ws/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/services-core-ws/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test-harness/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test-harness/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user-service-javax/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user-service-javax/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user-service-raw/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user-service-raw/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user-service-resteasy/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user-service-resteasy/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/userdb-service-resteasy-mongo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/userdb-service-resteasy-mongo/src/main/resources" charset="UTF-8" />
+  </component>
+</project>
