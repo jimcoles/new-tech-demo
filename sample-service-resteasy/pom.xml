@@ -45,7 +45,7 @@
         <version.junit>4.10</version.junit>
         <version.guice>3.0</version.guice>
         <version.servlet>3.0</version.servlet>
-        <version.shiro>1.2.3</version.shiro>
+        <version.shiro>1.7.1</version.shiro>
     </properties>
 
     <dependencies>
