@@ -26,7 +26,7 @@
         <version.resteasy>3.7.0.Final</version.resteasy>
         <version.guice>3.0</version.guice>
         <version.shiro>1.2.3</version.shiro>
-        <jackson.version>2.10.0.pr1</jackson.version>
+        <jackson.version>2.12.7.1</jackson.version>
         <resteasy-jackson-provider.version>2.2.1.GA</resteasy-jackson-provider.version>
         <mongo-java-driver.version>3.10.2</mongo-java-driver.version>
         <javaee-api.version>7.0</javaee-api.version>
