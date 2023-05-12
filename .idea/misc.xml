@@ -4,27 +4,9 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/_pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/demo-services-war-jboss/pom.xml" />
-        <option value="$PROJECT_DIR$/demo-services-war-tomcat/pom.xml" />
-        <option value="$PROJECT_DIR$/demo-shared-api/pom.xml" />
-        <option value="$PROJECT_DIR$/demo-ui-angular/pom.xml" />
-        <option value="$PROJECT_DIR$/demo-ui-react-simple/pom.xml" />
-        <option value="$PROJECT_DIR$/demo-ui-react/pom.xml" />
-        <option value="$PROJECT_DIR$/sample-service-resteasy/pom.xml" />
-        <option value="$PROJECT_DIR$/sample-ui-basic-war/pom.xml" />
-        <option value="$PROJECT_DIR$/services-core-ws/pom.xml" />
-        <option value="$PROJECT_DIR$/test-harness/pom.xml" />
-        <option value="$PROJECT_DIR$/user-service-javax/pom.xml" />
-        <option value="$PROJECT_DIR$/user-service-raw/pom.xml" />
-        <option value="$PROJECT_DIR$/user-service-resteasy/pom.xml" />
-        <option value="$PROJECT_DIR$/userdb-service-resteasy-mongo/pom.xml" />
-      </set>
-    </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_12" default="true" project-jdk-name="12" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK" />
 </project>

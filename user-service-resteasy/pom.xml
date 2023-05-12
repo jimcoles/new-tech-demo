@@ -3,18 +3,33 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <parent>
-        <artifactId>new-tech-demo</artifactId>
-        <groupId>org.jkcsoft</groupId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
-
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <artifactId>new-tech-demo</artifactId>
+        <groupId>org.jkcsoft.demo</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
     <artifactId>user-service-resteasy</artifactId>
+
     <description>A web service implemented with RestEasy annotations that will only work with a
     RestEasy and Guice dispatch mechanism</description>
+
     <packaging>jar</packaging>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.jkcsoft.demo</groupId>
+                <artifactId>bom</artifactId>
+                <version>1.0-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
 
@@ -27,6 +42,11 @@
         </dependency>
 
         <!-- App frameworks -->
+
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -73,11 +93,12 @@
         <!-- Inter-project deps -->
 
         <dependency>
-            <groupId>org.jkcsoft</groupId>
+            <groupId>org.jkcsoft.demo</groupId>
             <artifactId>services-core-ws</artifactId>
         </dependency>
+
         <dependency>
-            <groupId>org.jkcsoft</groupId>
+            <groupId>org.jkcsoft.demo</groupId>
             <artifactId>demo-shared-api</artifactId>
         </dependency>
 

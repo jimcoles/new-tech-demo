@@ -1,0 +1,81 @@
+/**
+ * Top-level gradle script for the demo.
+ */
+buildscript {
+    ext {
+        /**
+         //for dependencies found in artifact repositories you can use
+         //the group:name:version notation
+         implementation 'commons-lang:commons-lang:2.6'
+         testImplementation 'org.mockito:mockito:1.9.0-rc1'
+
+         //map-style notation:
+         implementation group: 'com.google.code.guice', name: 'guice', version: '1.0'
+
+         //declaring arbitrary files as dependencies
+         implementation files('hibernate.jar', 'libs/spring.jar')
+
+         //putting all jars from 'libs' onto compile classpath
+         implementation fileTree('libs')
+         */
+
+        JBOSS_VERSION = '3.7.0.Final'
+        JAVAX_INJECT_VERSION = '1'
+        CDI_API_VERSION = '2.0.SP1'
+        //
+        libraries = [
+            javaWsRsApi:
+                dependencies.create('javax.ws.rs:javax.ws.rs-api') {
+                    version {
+                        strictly '2.0'
+                        //              strictly '[1.7, 1.8['
+                        //              prefer '1.7.25'
+                    }
+                }
+        ]
+    }
+}
+
+//plugins {
+//    id 'org.springframework.boot' version '2.2.1.RELEASE'
+//}
+
+// The following var decls and assignments must come after the buildscript and plugins blocks
+
+String dingo = "dingo"
+description = "A place to get hands-on with new technologies like Javascript, micro-services"+
+        ", and NoSQL."
+
+allprojects {
+    group = 'org.jkcsoft'
+    version = '1.0-SNAPSHOT'
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'maven-publish'
+
+//    apply plugin: 'org.springframework.boot'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+//        maven {
+//            url = 'http://repo.maven.apache.org/maven2'
+//        }
+    }
+
+    sourceCompatibility = '12'
+
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                from(components.java)
+            }
+        }
+    }
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+}
