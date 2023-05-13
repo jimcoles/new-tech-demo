@@ -7,7 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="user-service-raw" />
+        <module name="services-common-cdi" />
         <module name="test-harness" />
+        <module name="user-ms-docker" />
         <module name="demo-ui-react" />
         <module name="demo-services-war-tomcat" />
         <module name="sample-ui-basic-war" />
@@ -18,7 +20,9 @@
         <module name="demo-services-war-jboss" />
         <module name="sample-service-resteasy" />
         <module name="demo-ui-angular" />
+        <module name="services-core-guice" />
         <module name="user-service-javax" />
+        <module name="services-framework" />
       </profile>
     </annotationProcessing>
   </component>

@@ -38,8 +38,13 @@
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${version.slf4j}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-log4j12</artifactId>
-                <version>${version.slf4j-log4j}</version>
+                <version>${version.slf4j}</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/javax/javaee-api -->
@@ -50,6 +55,17 @@
                 <scope>provided</scope>
             </dependency>
 
+            <dependency>
+                <groupId>javax.inject</groupId>
+                <artifactId>javax.inject</artifactId>
+                <version>${version.javax.inject}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.enterprise</groupId>
+                <artifactId>cdi-api</artifactId>
+                <version>${version.javax.cdi.api}</version>
+            </dependency>
             <!-- App frameworks -->
 
             <dependency>
@@ -123,6 +139,21 @@
             <dependency>
                 <groupId>org.jkcsoft.demo</groupId>
                 <artifactId>services-core-ws</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jkcsoft.demo</groupId>
+                <artifactId>services-framework</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jkcsoft.demo</groupId>
+                <artifactId>services-core-guice</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jkcsoft.demo</groupId>
+                <artifactId>user-service-docker</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

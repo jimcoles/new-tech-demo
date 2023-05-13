@@ -32,6 +32,31 @@
         </repository>
     </repositories>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.source.level>12</java.source.level>
+        <java.target.level>17</java.target.level>
+        <timestamp>${maven.build.timestamp}</timestamp>
+        <maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
+
+        <javaee-api.version>8.9.1</javaee-api.version>
+        <version.javax.inject>1</version.javax.inject>
+        <version.slf4j>2.0.0-alpha5</version.slf4j>
+
+        <version.junit>4.10</version.junit>
+        <version.servlet>3.0.1</version.servlet>
+        <version.resteasy>3.7.0.Final</version.resteasy>
+        <version.guice>3.0</version.guice>
+        <version.shiro>1.2.3</version.shiro>
+        <jackson.version>2.10.0.pr1</jackson.version>
+        <resteasy-jackson-provider.version>2.2.1.GA</resteasy-jackson-provider.version>
+        <mongo-java-driver.version>3.10.2</mongo-java-driver.version>
+        <javaee-api.version>7.0</javaee-api.version>
+        <version.javax.cdi.api>2.0-PFD2</version.javax.cdi.api>
+    </properties>
+
     <build>
         <defaultGoal>package</defaultGoal>
 
@@ -82,13 +107,17 @@
         <!-- Core modules -->
 
         <module>services-core-ws</module>
+        <module>services-framework</module>
+        <module>services-core-guice</module>
 
         <!-- App modules -->
 
         <module>demo-shared-api</module>
         <module>demo-ui-react-simple</module>
         <module>demo-ui-angular</module>
+        <module>services-common-cdi</module>
         <module>userdb-service-resteasy-mongo</module>
+        <module>user-service-docker</module>
         <module>user-service-raw</module>
         <module>user-service-resteasy</module>
         <module>test-harness</module>
@@ -106,27 +135,5 @@
         <module>sample-ui-basic-war</module>
 
     </modules>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.source.level>12</java.source.level>
-        <java.target.level>17</java.target.level>
-        <timestamp>${maven.build.timestamp}</timestamp>
-        <maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
-
-        <javaee-api.version>8.9.1</javaee-api.version>
-        <version.slf4j-log4j>1.6.4</version.slf4j-log4j>
-        <version.junit>4.10</version.junit>
-        <version.servlet>3.0.1</version.servlet>
-        <version.resteasy>3.7.0.Final</version.resteasy>
-        <version.guice>3.0</version.guice>
-        <version.shiro>1.2.3</version.shiro>
-        <jackson.version>2.10.0.pr1</jackson.version>
-        <resteasy-jackson-provider.version>2.2.1.GA</resteasy-jackson-provider.version>
-        <mongo-java-driver.version>3.10.2</mongo-java-driver.version>
-        <javaee-api.version>7.0</javaee-api.version>
-    </properties>
 
 </project>
