@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Space TH | Layout | Flexbox</title>
+    <style>
+        html {
+            background-color: black;
+            /*display: flex;*/
+            /*flex-direction: column;*/
+        }
+        body {
+            /*background-color: black;*/
+            /*flex: auto;*/
+            margin: 1px;
+            /*height: 100%;*/
+        }
+        div {
+            /*border: 1px black solid;*/
+        }
+        .outer {
+            background-color: black;
+            border: 1px white solid;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            color: white;
+            display: flex;
+            /*flex: auto;*/
+            /*flex-basis: 100%;*/
+            flex-direction: column;
+            /*height: 100%;*/
+            /*padding: 5px;*/
+        }
+        .head-foot {
+            /*border: 1px black solid;*/
+            /*background-color: darkgray;*/
+            /*padding: 1px;*/
+            padding: 3px;
+            flex-basis: 0;
+        }
+
+        #foot {
+            border-top: 1px white solid;
+        }
+
+        #head {
+            border-bottom: 1px white solid;
+        }
+
+        .center {
+            /*height: 100%;*/
+            /*flex-basis: 400px;*/
+            /*flex-basis: 100%;*/
+            /*border: 1px black solid;*/
+            /*padding: 15px;*/
+            /*background-color: darkgray;*/
+            box-sizing: border-box;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <script type="module">
+        import {getCssPx} from "../../js/uiUtils.ts";
+        function resizeCenter() {
+            let centerDiv = document.querySelector("#meat");
+            let body = document.body;
+            /*
+              Prior to re-sizing, compute otherElementHeight = how much of the current
+              <body> height is being used by elements other than the center div.
+              Then compute, maxBodyHeight, the max body height w/o creating scroll bars.
+            */
+            let totalBodyHeight = body.offsetHeight + (getCssPx(body, "margin") * 2);
+            let totalCenterDivHeight = centerDiv.offsetHeight + (getCssPx(centerDiv, "margin") * 2);
+            //
+            let currentBodyFixedElementHeight = totalBodyHeight - totalCenterDivHeight;
+
+            let newCenterDivHeightPx = window.innerHeight - currentBodyFixedElementHeight;
+            console.log(`computed h + f height ${currentBodyFixedElementHeight}`);
+            centerDiv.style.flexBasis = `${newCenterDivHeightPx}px`;
+        }
+
+
+        window.addEventListener("resize", () => {
+            resizeCenter();
+        });
+
+        window.addEventListener("load", () => {
+            resizeCenter();
+        });
+
+    </script>
+    <div id="head" class="head-foot">
+        Header
+    </div>
+    <div id="meat" class="center">
+        <img src="./rhino.jpg">
+    </div>
+
+    <div id="foot" class="head-foot">
+        Footer
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Space TH | Layout | Flexbox CSS 2</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        .box {
+            display: flex;
+            flex-flow: column;
+            height: 100%;
+        }
+
+        .box .row {
+            border: 1px dotted grey;
+        }
+
+        .box .row.header {
+            flex: 0 1 auto;
+            /* The above is shorthand for:
+            flex-grow: 0,
+            flex-shrink: 1,
+            flex-basis: auto
+            */
+        }
+
+        .box .row.content {
+            flex: 1 1 auto;
+        }
+
+        .box .row.footer {
+            /*flex: 0 1 40px;*/
+            flex: 0 1 auto;
+        }
+
+    </style>
+    <!-- Obviously, you could use HTML5 tags like `header`, `footer` and `section` -->
+</head>
+
+<body>
+<div class="box">
+    <div class="row header">
+        <p><b>header</b>
+            <br/>
+            <br/>(sized to content)</p>
+    </div>
+    <div class="row content">
+        <p>
+            <b>content</b>
+            (fills remaining space)
+        </p>
+        <p>Taken from:
+            <a href="https://stackoverflow.com/questions/90178/make-a-div-fill-the-height-of-the-remaining-screen-space#24979148">
+                Stack Overflow</a>
+        </p>
+    </div>
+    <div class="row footer">
+        <p><b>footer</b> (fixed height)</p>
+    </div>
+</div>
+
+</body>
+</html>

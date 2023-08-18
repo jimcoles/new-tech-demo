@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <link rel="stylesheet" href="flex-sizing.css">
+  <title>CSS | Auto-Fill Divs</title>
+  <script type="application/ecmascript">
+    function handleWindowResize() {
+      const canvas = document.querySelector('#my-canvas')
+      const ctx = canvas.getContext('2d')
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      console.log(`window resize`);
+    }
+
+    window.addEventListener('resize', handleWindowResize)
+  </script>
+</head>
+<body>
+<div class="outer-container">
+  <div class="content-height-row">Content-based</div>
+  <div class="fill-grow-row">
+    <canvas id="my-canvas" style="height:100%; width: 100%; background-color: deeppink"></canvas>
+  </div>
+  <div class="content-height-row">Content-based</div>
+</div>
+</body>
+</html>

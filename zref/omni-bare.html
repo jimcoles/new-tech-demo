@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Space - Test SVG Bare Bones</title>
+<body>
+
+<h2>Omni SVG</h2>
+<svg id="an-svg" style="width: 300px; height: 200px"></svg>
+
+<script>
+    let svg = document.querySelector("#an-svg");
+
+    let shape = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    shape.cx.baseVal.value = 25;
+    shape.cy.baseVal.value = 25;
+    shape.r.baseVal.value = 20;
+    shape.setAttribute("fill", "green");
+    svg.appendChild(shape);
+    //
+    let g1 = document.createElementNS("http://www.w3.org/2000/svg", "g");
+    let path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    // path.setAttributeNS("http://www.w3.org/2000/svg", "stroke", "black");
+    // path.setAttributeNS("http://www.w3.org/2000/svg", "d", "m 10 10 h 100 v 20 h -100 z");
+    path.setAttribute("stroke", "black");
+    path.setAttribute("d", "m 10 10 h 100 v 20 h -100 z");
+
+    svg.appendChild(g1);
+    g1.appendChild(path);
+
+</script>
+
+</body>
+</html>

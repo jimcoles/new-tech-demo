@@ -1,0 +1,15 @@
+@startuml
+
+actor User
+
+User -> Component: Interacts with UI
+Component -> Selector: Selects state from store
+Selector -> Component: Returns selected state
+User -> Component: Triggers an action
+Component -> Store: Dispatches the action
+Store -> Reducer: Passes action and current state
+Reducer -> Store: Returns new state
+Store -> Component: Updates state
+Component -> User: Renders updated UI
+
+@enduml

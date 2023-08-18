@@ -24,9 +24,12 @@ hs_err_pid*
 
 target/
 build/
+dist/
 node/
 out/
 node_modules/
+.idea/
+.gradle/
 #/demo-ui-react/node_modules/
 /log/
 /tmp/

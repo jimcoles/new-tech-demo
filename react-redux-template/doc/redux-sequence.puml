@@ -1,0 +1,47 @@
+@startuml
+
+actor User
+
+User -> Component: Interacts with UI
+
+activate Component
+
+Component -> Selector: Calls selector functions
+activate Selector
+
+Selector -> Store: Retrieves state from store
+activate Store
+
+Store --> Selector: Returns state
+deactivate Store
+
+Selector --> Component: Returns selected data
+deactivate Selector
+
+Component -> Component: Performs UI rendering
+
+Component -> Dispatch: Calls dispatch function
+activate Dispatch
+
+Dispatch -> Slicer: Sends action to slicer
+activate Slicer
+
+Slicer -> Store: Updates store state
+activate Store
+
+Store --> Slicer: Acknowledges state update
+deactivate Store
+
+Slicer --> Dispatch: Notifies action completion
+deactivate Slicer
+
+Dispatch --> Component: Completes dispatch
+deactivate Dispatch
+
+Component -> Component: Updates UI with new data
+
+Component --> User: Renders updated UI
+
+deactivate Component
+
+@enduml

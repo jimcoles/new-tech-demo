@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Space TH | HTML5 Sections HF</title>
+    <style>
+        html {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            /* MUST set margin to 0. Use padding instead. and if
+            padding > 0, use border box sizing so that the
+            100% means "the outside of my border uses 100%".. */
+            display: flex;
+            flex-flow: column;
+            box-sizing: border-box;
+            height: 100%;
+            margin: 0;
+            border: 20px solid gray;
+            padding: 20px;
+            /*margin: 20px;*/
+        }
+        header {
+            flex: 0 1 auto;
+            box-sizing: border-box;
+            border: 1px dotted gray;
+        }
+        section {
+            flex: 1 1 auto;
+            border: 1px dotted gray;
+            box-sizing: border-box;
+        }
+        footer {
+            flex: 0 1 auto;
+            border: 1px dotted gray;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<header>Header</header>
+<section>Section<canvas></canvas></section>
+<footer>Footer stuff</footer>
+
+</body>
+</html>

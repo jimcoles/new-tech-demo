@@ -1,0 +1,246 @@
+<!--
+  ~ Copyright (c) Jim Coles (jameskcoles@gmail.com) 2023 through present.
+  ~
+  ~ Licensed under the following license agreement:
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Also see the LICENSE file in the repository root directory.
+  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="sbs.css">
+    <title>Space - UI Test Harness</title>
+    <script src="sbs-test.js" type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"></script>
+</head>
+<body>
+
+<div class="h-flex-group">
+    <div class="h-spacer"></div>
+    <div class="title-box">The <span class="spacial">Space&trade;</span> Side-by-Side (SBS) Graphics Test Harness</div>
+    <div class="h-spacer"></div>
+</div>
+
+
+<div id="top-div" class="grid-outer grid-outer-50-50">
+
+    <div id="svg-static-div" class="grid-cell">
+        <h2>SVG Static</h2>
+        <p><code>&lt;svg&gt;</code>: Scalable Vector Graphics (SVG). Supports the SVG graphics model
+            for relative graphics contexts, path (line, curve, polygon) drawing with path closure.
+            Includes some high-level graphics objects.
+            Good for creating
+            clickable diagrams.
+        </p>
+        <pre>
+            (absolute, relative)
+            M, m - <strong>move</strong>
+            L, l - <strong>line</strong> to
+            H, h - <strong>horiz</strong> line
+            V, v - <strong>vert</strong> line
+            C, c - <strong>cubic</strong> bezier
+            S, s - <strong>smooth</strong> cubic bezier
+            Q, q - <strong>quadratic</strong> bezier
+            T, t - smooth quadratic bezier
+            A, a - elliptical <strong>arc</strong>
+            Z, z - close path
+        </pre>
+        <p>Pros</p>
+        <ul>
+            <li>Used by Google Drawing, which features highly editable box and line
+                user objects.
+            </li>
+            <li>
+                SVG objects are known elements to the browser. Can be given id's and
+                event handlers.
+            </li>
+        </ul>
+        <p>Cons:</p>
+        <ul>
+            <li>We'd get no help with 3D effects.</li>
+        </ul>
+
+        <pre class="space-code-box">
+&lt;svg&gt;
+    &lt;rect&gt;
+        &lt;circle&gt;
+        &lt;text&gt;
+        &lt;g&gt;
+            ...
+            &lt;g&gt;
+                &lt;path&gt;
+&lt;svg&gt;</pre>
+
+        <div class="simple-border">
+            <svg id="omni-svg"
+                 style="background-color: wheat"
+                 viewBox="0 0 300 200">
+                <circle r="25" cx="50" cy="50" fill="#0000ff"></circle>
+                <text x="10" y="10" class="object-text">SVG Text under svg tag</text>
+                <g id="1">
+                    <text class="object-text" dx="20" dy="20">SVG Text in g tag</text>
+                    <path stroke="black" d=" m 120 100 h 100 v -50 h -100 z"></path>
+                    <path stroke="white"
+                          d="M 33.3  0 v 100"/>
+
+                    <path stroke="white"
+                          d="M 66.6 0 v 100"/>
+
+                    <!-- not matching unclosed -->
+                    <path stroke="red"
+                          d="M 12 1 l -4 8 8 0"/>
+
+                    <!-- not matching closed -->
+                    <path stroke="red"
+                          d="M 37 1 l -4 8 8 0 z"/>
+
+                    <!-- matching unclosed -->
+                    <path stroke="red"
+                          d="M 62 1 l -4 8  8 0  -4 -8"/>
+
+                    <!-- not matching unclosed -->
+                    <path stroke="red"
+                          d="M 88 1 l -4 8  8 0  -4 -8 z"/>
+
+                </g>
+            </svg>
+            <!--            <svg id="omni-svg" -->
+            <!--                 xmlns="http://www.w3.org/2000/svg" -->
+            <!--                 viewBox="0 0 300 200" style="height: 200px">-->
+            <svg id="omni-svg"
+                 viewBox="0 0 300 200" style="height: 200px">
+                <circle r="25" cx="50" cy="50" fill="#0000ff"></circle>
+
+                <g id="1">
+                    <path stroke="black" d=" m 120 30 h 100 v 50 h -100 z"></path>
+                </g>
+                <g id="2">
+                    <path stroke="black" d=" m 120 30 h 100 v 50 h -100 z"></path>
+                </g>
+            </svg>
+        </div>
+    </div>
+    <div id="svg-dynamic-div" class="grid-cell">
+
+        <h2>SVG Dynamic JS API</h2>
+
+        <!-- Dynamic elements go here -->
+
+    </div>
+
+    <div id="canvas-static-div" class="grid-cell">
+        <div class="flex-group">
+            <h2>Canvas Static</h2>
+            <div><p><code>&lt;canvas&gt;</code> : Low-level graphics</p>
+                <p>Canvas is a low-level bitmap graphics object for 2D and 3D. We'd like to use this if possible
+                    so that we can get as sophisticated as possible.
+                </p>
+                <p>Notes:</p>
+                <ul>
+                    <li>Used by Google Maps for the map itself, but requires the Google JS library for event
+                        handling)
+                        i.e., the browser does not know about the map objects or events.
+                    </li>
+                    <li>Can use the WebGL library.</li>
+                    <li>2D support. 3D not supported by Safari.</li>
+                    <li>Bitmap drawing so the browser does not know about the 'objects'
+                        you're drawing.
+                    </li>
+                </ul>
+            </div>
+            <div class="simple-border">
+                <canvas id="static-canvas" style="height: 200px; width: 100%">
+                </canvas>
+            </div>
+        </div>
+    </div>
+    <div id="canvas-dynamic-div" class="grid-cell">
+        <h2>Canvas Dynamic JS API</h2>
+    </div>
+
+    <div class="grid-cell">
+        <h2>Semantic HTML Widgets</h2>
+        <div class="grid-outer simple-border grid-outer-2col">
+            <div class="subgrid-cell grid-cell">
+                <div class="grid-cell valign">&lt;a&gt;</div>
+            </div>
+            <div class="grid-cell"><a class="button-like" href="#">Link to Hell</a></div>
+
+            <div class="subgrid-cell grid-cell">
+                <div class="grid-cell valign">Input - Text</div>
+            </div>
+            <div class="grid-cell"><input type="text" size="20" content="(text me)"></div>
+
+            <div class="subgrid-cell grid-cell">
+                <div class="grid-cell valign ">button</div>
+            </div>
+            <div class="grid-cell">
+                <button type="button" class="button-like"><span>Impress Me</span></button>
+            </div>
+
+            <div class="subgrid-cell grid-cell">
+                <div class="grid-cell valign">input type=button</div>
+            </div>
+            <div class="grid-cell"><input type="button" class="button-like" value="Press My Buttons" size="20"></div>
+
+            <div class="subgrid-cell grid-cell">
+                <div class="grid-cell valign">input type=submit</div>
+            </div>
+            <div class="grid-cell"><input type="submit" class="button-like" value="Submit to Me" size="20"></div>
+
+            <div class="subgrid-cell grid-cell">
+                <div class="grid-cell valign">input type=color</div>
+            </div>
+            <div class="grid-cell">
+                <label>Color
+                    <input type="color">
+                </label>
+            </div>
+
+            <div class="grid-cell subgrid-cell">
+                <div class="grid-cell valign">input type=checkbox</div>
+            </div>
+            <div class="grid-cell">
+                <input type="checkbox" id="a-checkbox">
+                </input>
+                <label for="a-checkbox">Opt-in, sucka!</label>
+            </div>
+
+            <div class="grid-cell subgrid-cell">
+                <div class="grid-cell valign">input type=image</div>
+            </div>
+            <div class="grid-cell">
+                <input type="image" id="image-input" alt="Go for it!" src="../img/search.svg"
+                       style="background-color: gray">
+                <label for="image-input">Image</label>
+            </div>
+
+            <div class="grid-cell subgrid-cell">
+                <div class="grid-cell valign">&lt;select&gt;</div>
+            </div>
+            <div class="grid-cell">
+                <label>
+                    <select>
+                        <option>(Select Awesomeness))</option>
+                        <option>opt 1</option>
+                        <option>opt 2</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+        <div>
+            <label>
+                <select>
+                    <option>(Select Awesomeness))</option>
+                    <option>opt 1</option>
+                    <option>opt 2</option>
+                </select>
+            </label>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!--
+  ~ Copyright (c) Jim Coles (jameskcoles@gmail.com) 2023 through present.
+  ~
+  ~ Licensed under the following license agreement:
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Also see the LICENSE file in the repository root directory.
+  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="index.css" rel="stylesheet">
+    <title>Space - Omni &trade;</title>
+    <script src="js/omni.js" type="module"></script>
+    <!--    <script src="js/snap.svg-min.js" type="module"></script>-->
+    <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"></script>-->
+</head>
+<body>
+<noscript>This page can not be displayed because your browser settings do no allow Javascript.</noscript>
+
+<div id="outer-float" class="floating v-flex-group" style="width: 100%; height: 100%;">
+    <div id="top-row-float" class="h-flex-group" style="flex: 0 0 fit-content; width: 100%; align-items: center">
+
+        <div class="group-title-box" style="flex: 0 0 fit-content">
+            <div id="omni-action-group" class="action-group h-flex-group">
+                <div id="app-name-action" class="app-name-box action-item h-flex-group">
+                    <div class="v-flex-group">
+                        <img src="img/space-logo-arc-pyramid.svg" style="width: 24px; height: 24px">
+                        <img src="img/space-s-circles.svg" style="width: 24px; height: 24px">
+                    </div>
+                    <span>Omni</span>
+                </div>
+                <div>
+                    <input id="space-address" class="toolbar-combo-button-input" type="text">
+                </div>
+                <div id="reload-button" class="action-item">
+                    <div class="icon-img-container icon-reload"></div>
+                </div>
+            </div>
+            <div>Space Entryway URL</div>
+        </div>
+
+        <div style="flex: 1 1 auto"></div>
+
+        <div class="group-title-box" style="flex: 0 0 fit-content">
+            <div id="query-action-group" class="action-group h-flex-group">
+                <div id="space-address-input">
+                    <input id="search-input" class="toolbar-combo-button-input" type="text">
+                </div>
+                <div id="download-button" class="action-item">
+                    <div class="icon-img-container icon-search">&nbsp;</div>
+                </div>
+            </div>
+            <div>Goal-Query</div>
+        </div>
+    </div>
+
+    <div id="middle-row-float" class="h-flex-group" style="flex: 1 1 auto; width: 100%">
+        <div id="left-col" class="v-flex-group" style="flex: 0 0 fit-content; height: 100%">
+            <div class="group-title-box">
+                <div id="user-settings-action-group" class="action-group v-flex-group">
+                    <div id="user-profile-button" class="action-item">
+                        <div class="icon-img-container icon-user-profile"></div>
+                    </div>
+                    <div id="settings-button" class="action-item">
+                        <div class="icon-img-container  icon-settings"></div>
+                    </div>
+                </div>
+                <div>User</div>
+            </div>
+
+            <div class="group-title-box">
+                <div id="import-export-action-group" class="action-group v-flex-group">
+                    <div id="file-menu" class="action-item">File</div>
+                    <div id="edit-menu" class="action-item">Edit</div>
+                </div>
+                <div>Im-Ex</div>
+            </div>
+        </div>
+
+        <div id="middle-spacer-col" class="h-flex-group" style="flex: 1 1 auto; height: 100%; justify-content: center">
+
+            <div id="about-box" class="v-flex-group round-border">
+                <div class="dialog-icon-box" style="position: fixed; top: 0px; right: 0px;">
+                    <img src="img/close.svg">
+                </div>
+                <div class="v-flex-group">
+                    <div class="center-flex">
+                        <div class="title-box">
+                            <span class="spacial">Omni&trade;</span> for <span class="spacial">Space&trade;</span>
+                        </div>
+                    </div>
+
+                    <div style="padding: 10px">
+                        <img src="img/space-s-circles.svg" style="width: 300px; height: 300px">
+                    </div>
+
+                    <div style="text-align: center; margin: 5pt">
+                        See the World. From <span class="spacial">Space</span>.
+                        <div class="banner-note" style="position: relative; margin: 5pt; font-size: smaller">
+                            A tool to view and create <em>Spaces</em>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="canvas-info" class="help-info">Canvas:</div>
+
+        </div>
+
+        <div id="right-col" class="v-flex-group" style="flex: 0 0 fit-content; height: 100%">
+            <div class="group-title-box" style="flex: 0 0 fit-content">
+                <div id="view-control-group" class="action-group v-flex-group">
+                    <div class="action-item">
+                        <input type="checkbox" id="use-sphere-view-cb">
+                        <label for="use-sphere-view-cb">3D Spherical View</label>
+                    </div>
+
+                    <div class="action-item">
+                        <input type="checkbox" id="use-diagram-view-cb">
+                        <label for="use-diagram-view-cb">Diagram View</label>
+                    </div>
+
+                    <div id="filter-button" class="action-item">
+                        <div class="icon-img-container  icon-filter"></div>
+                    </div>
+                    <div id="zoom-button" class="action-item">
+                        <div class="icon-img-container icon-zoom-in">&nbsp;</div>
+                    </div>
+                    <div id="diagram-select-action-item" class="action-item">
+                        <div class="icon-img-container icon-arrow-dropdown">&nbsp;</div>
+                    </div>
+                    <div id="text-edit-button" class="action-item">
+                        <img src="img/edit-cursor.svg">
+                    </div>
+                </div>
+                <div>View Control</div>
+            </div>
+
+            <div style="flex: 1 1 auto"></div>
+
+            <div class="group-title-box" style="flex: 0 0 fit-content">
+                <div id="debug-action-group" class="action-group v-flex-group">
+                    <div id="show-canvas-info-button" class="action-item">
+                        <input type="checkbox" id="show-canvas-cb">
+                        <label for="show-canvas-cb">Show canvas info</label>
+                    </div>
+                </div>
+                <div>Debug Adhocs</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="bottom-row-float" class="h-flex-group" style="flex: 0 0 fit-content; width: 100%; align-items: center">
+
+        <div class="group-title-box">
+            <div id="object-tree" class="action-group">
+                (Object Tree)
+            </div>
+            <div>Object Tree</div>
+        </div>
+
+        <div class="group-title-box">
+            <div id="console" class="console v-flex-group action-group">
+                <div class="console-input-div">
+                    <span class="input-prompt code-text">&nbsp;&lt;-&nbsp;</span>
+                    <span class="user-input-text code-text" contenteditable="true" inputmode="text"
+                          role="textbox">input test...</span>
+                </div>
+                <div class="console-output-line" contenteditable="false">
+                    <span class="output-port code-text">&nbsp;-&gt;&nbsp;</span><span
+                        class="output-stream-text code-text">output text</span>
+                </div>
+
+                <div class="h-spacer"></div>
+
+            </div>
+            <div>Omni Console</div>
+        </div>
+
+        <div class="group-title-box">
+            <div id="omni-source-editor" class="action-group">
+                <div class="console-input-div">
+                    <span class="code-text" contenteditable="true" inputmode="text"
+                          role="textbox">input test...</span>
+                </div>
+            </div>
+            <div>Space Editor</div>
+        </div>
+
+    </div>
+</div>
+
+<div id="outer-static" class="hfc-box">
+
+    <div id="head" class="row header">
+    </div>
+
+    <div id="canvas-div" class="row center">
+        <canvas id="omni-canvas">
+        </canvas>
+    </div>
+
+    <!--    Dynamically set foot class to 'floating' (fixed) or flex-based 'row footer' -->
+    <!--    <div id="foot" class="row footer">-->
+    <div id="foot" class="row footer">
+    </div>
+
+</div>
+
+</body>
+</html>
